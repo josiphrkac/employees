@@ -10,10 +10,10 @@
 
 <body>
     <form action="">
-        <h1>Sign Up</h1>
-        <p>Please fill this form to sign up!</p>
+        <h1>Login</h1>
+        <p>Please fill this form to log in!</p>
 
-        <label for="email">Email</label>
+        <label for="email">E-mail</label>
         <input type="email" name="email">
         <label for="password">Password</label>
         <input type="password" name="password">
