@@ -24,4 +24,31 @@ class User
         } else
             return false;
     }
+    public function loginUser($email, $password)
+    {
+        $this->db->query('SELECT * FROM users WHERE email = :email');
+
+        $this->db->bind(':email', $email);
+
+        $row = $this->db->getRow();
+        $hashed_password = $row->password;
+
+        if (password_verify($password, $hashed_password)) {
+            return $row;
+        } else
+            return false;
+    }
+
+    public function emailChecker($email)
+    {
+        $this->db->query('SELECT * FROM users WHERE email = :email');
+        $this->db->bind(':email', $email);
+
+        $this->db->getRow();
+
+        if ($this->db->rowCount() > 0) {
+            return true;
+        } else
+            return false;
+    }
 }

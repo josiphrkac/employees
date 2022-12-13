@@ -40,17 +40,17 @@ class Database
     public function getAllrows()
     {
         $this->execute();
-        $this->stmt->fetchAll(PDO::FETCH_OBJ);
+        return $this->stmt->fetchAll(PDO::FETCH_OBJ);
     }
     public function getRow()
     {
         $this->execute();
-        $this->stmt->fetch(PDO::FETCH_OBJ);
+        return $this->stmt->fetch(PDO::FETCH_OBJ);
     }
 
     public function rowCount()
     {
         $this->execute();
-        $this->stmt->rowCount();
+        return $this->stmt->rowCount();
     }
 }
